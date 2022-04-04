@@ -1,18 +1,16 @@
-import React from "react"
-import CartComp from '../components/CartComp';
-import { cartState } from '../stores/cart/atom';
+import React from "react";
+import CartComp from "../components/CartComp";
+import { cartState } from "../stores/cart/atom";
 import { useRecoilValue } from "recoil";
 
 function Cart() {
-  const products = useRecoilValue(cartState)
-
+  const products = useRecoilValue(cartState);
 
   return (
     <main>
-      
-        <CartComp products={products} />
+      <CartComp products={products} />
     </main>
-  )
+  );
 }
 
-export default Cart
+export default Cart;

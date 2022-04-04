@@ -17,12 +17,14 @@ if (!user) {
 
 
   return (
-    <Stack>
+    <Stack justifyContent="center" alignItems="center">
       <Heading>My Account</Heading>
       <Text>Username: {user.username}</Text>
       <Text>Firstname: {user.name.firstname}</Text>
       <Text>Lastname: {user.name.lastname}</Text>
-      <Text>Address: {user.address.city}</Text>
+      <Text>Address: {user.address.city} {user.address.street} {user.address.number} {user.address.zipcode}</Text>
+      <Text>Phone: {user.phone}</Text>
+      
       <Button as={ReachLink} to="/login" variant="primary" width="150px" bg="#beccd6" onClick={reset}>
         Logout
       </Button>

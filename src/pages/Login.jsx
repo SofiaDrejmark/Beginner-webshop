@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Link as ReachLink } from "react-router-dom";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 import { authState } from "../stores/Auth/atom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -39,7 +39,7 @@ function Login() {
               user: userData.data,
               token: res.data.token,
             });
-            console.log(userData);
+
             nav(userData.data.role === "user" ? "/userinfo" : "/admin");
           });
       });

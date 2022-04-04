@@ -66,8 +66,9 @@ function Registration() {
                 setAuth({
                   user: userData.data,
                   token: res.data.token,
-                })
-              }).catch((error) => console.log(error));
+                });
+              })
+              .catch((error) => console.log(error));
           });
 
         nav("/userinfo");
@@ -214,8 +215,8 @@ function Registration() {
               </Stack>
 
               <Stack spacing="6">
-              
-                <Button onClick={handleSubmit}
+                <Button
+                  onClick={handleSubmit}
                   variant="primary"
                   type="submit"
                   bg="whitesmoke"
@@ -223,7 +224,6 @@ function Registration() {
                 >
                   Register
                 </Button>
-                
               </Stack>
               <HStack spacing="1" justify="center">
                 <Text color="muted">Allready have an account?</Text>

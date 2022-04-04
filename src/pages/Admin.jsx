@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 import { Stack, Heading, SimpleGrid } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
@@ -12,7 +12,6 @@ function Admin() {
   const auth = useRecoilValue(authState);
   const reset = useResetRecoilState(authState);
   const [users, setUsers] = useRecoilState(usersState);
-
 
   const products = useRecoilValue(productsState);
 
@@ -30,17 +29,14 @@ function Admin() {
     getUsers();
   }, []);
 
- 
-
   return (
     <Stack>
       <Heading>Admin page</Heading>
       <Heading>Usernames</Heading>
-<SimpleGrid>{users.map(user => user.username)}</SimpleGrid>
+      <SimpleGrid>{users.map((user) => user.username)}</SimpleGrid>
 
-
-<Heading>Products</Heading>
-<SimpleGrid>{products.map((product) => product.title)}</SimpleGrid>
+      <Heading>Products</Heading>
+      <SimpleGrid>{products.map((product) => product.title)}</SimpleGrid>
       <Link as={ReachLink} to="/login" onClick={reset}>
         Logout
       </Link>

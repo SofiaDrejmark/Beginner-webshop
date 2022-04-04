@@ -18,15 +18,12 @@ function SingleProduct() {
   const params = useParams();
   const products = useRecoilValue(productsState);
   const product = products.find((p) => {
-    console.log(p);
-
     return p.id === parseInt(params.productId);
   });
 
   function addToCart(product) {
     const newCart = [...cart, product];
     setCart(newCart);
-    console.log(newCart);
   }
 
   if (!product) return <Box>Loading...</Box>;
